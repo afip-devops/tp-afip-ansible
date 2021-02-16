@@ -18,10 +18,16 @@ class FilterModule(object):
         sorted = natsorted(array)
         res = sorted[::-1]
         for val in res:
+            print("variable 1 - valeur de val")
+            return val
             list_of_version = val
             if len(list_of_version) == 4:
                 m = re.search(r'^(v\d{1}.\d{1})', list_of_version)
+                print("variable 2 - valeur de len.list_of_version")
+                return len(list_of_version)
                 if m.group(0):
+                    print("variable 3 - valeur de m.group")
+                    return m.group(0)
                     break
         return list_of_version
     def get_device(self,list_device):
